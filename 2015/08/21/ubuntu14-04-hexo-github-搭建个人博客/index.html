@@ -7,20 +7,20 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="以前有在windows环境下搭建hexo博客，本次安装双系统后，把博客搭在ubuntu下，记录搭建过程中遇到的问题，以便以后查阅。
 安装node.js12sudo apt-get install nodejssudo apt-get install nodejs-legacy
-npm安装hexo速度超慢的问题更改镜像；1$ npm --registry=https://registry.npm.t">
+npm安装hexo速度超慢的问题更改镜像:1$ npm --registry=https://registry.npm.t">
 <meta property="og:type" content="article">
 <meta property="og:title" content="ubuntu14.04+hexo+github 搭建个人博客">
 <meta property="og:url" content="http://yoursite.com/2015/08/21/ubuntu14-04-hexo-github-搭建个人博客/index.html">
 <meta property="og:site_name" content="Juner'Blog">
 <meta property="og:description" content="以前有在windows环境下搭建hexo博客，本次安装双系统后，把博客搭在ubuntu下，记录搭建过程中遇到的问题，以便以后查阅。
 安装node.js12sudo apt-get install nodejssudo apt-get install nodejs-legacy
-npm安装hexo速度超慢的问题更改镜像；1$ npm --registry=https://registry.npm.t">
-<meta property="og:updated_time" content="2015-08-21T13:14:33.000Z">
+npm安装hexo速度超慢的问题更改镜像:1$ npm --registry=https://registry.npm.t">
+<meta property="og:updated_time" content="2015-08-21T13:15:20.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ubuntu14.04+hexo+github 搭建个人博客">
 <meta name="twitter:description" content="以前有在windows环境下搭建hexo博客，本次安装双系统后，把博客搭在ubuntu下，记录搭建过程中遇到的问题，以便以后查阅。
 安装node.js12sudo apt-get install nodejssudo apt-get install nodejs-legacy
-npm安装hexo速度超慢的问题更改镜像；1$ npm --registry=https://registry.npm.t">
+npm安装hexo速度超慢的问题更改镜像:1$ npm --registry=https://registry.npm.t">
   
     <link rel="alternative" href="/atom.xml" title="Juner&#39;Blog" type="application/atom+xml">
   
@@ -240,7 +240,7 @@ npm安装hexo速度超慢的问题更改镜像；1$ npm --registry=https://regis
       
         <p>以前有在windows环境下搭建hexo博客，本次安装双系统后，把博客搭在ubuntu下，记录搭建过程中遇到的问题，以便以后查阅。</p>
 <h4 id="安装node-js">安装node.js</h4><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get <span class="operator"><span class="keyword">install</span> nodejs</span><br><span class="line">sudo apt-<span class="keyword">get</span> <span class="keyword">install</span> nodejs-legacy</span></span><br></pre></td></tr></table></figure>
-<h4 id="npm安装hexo速度超慢的问题"><code>npm</code>安装<code>hexo</code>速度超慢的问题</h4><p>更改镜像；<br><figure class="highlight coffeescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">npm</span> --registry=<span class="attribute">https</span>:<span class="regexp">//</span>registry.<span class="built_in">npm</span>.taobao.org install hexo -g</span><br></pre></td></tr></table></figure></p>
+<h4 id="npm安装hexo速度超慢的问题"><code>npm</code>安装<code>hexo</code>速度超慢的问题</h4><p>更改镜像:<br><figure class="highlight coffeescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">npm</span> --registry=<span class="attribute">https</span>:<span class="regexp">//</span>registry.<span class="built_in">npm</span>.taobao.org install hexo -g</span><br></pre></td></tr></table></figure></p>
 <p>但安装过程还是很慢，且有些东西会安装报错，怎么办？把以上代码中的<code>https://</code>更改为<code>http://</code>：<br><figure class="highlight tcl"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm --<span class="keyword">registry</span>=<span class="keyword">http</span>://<span class="keyword">registry</span>.npm.taobao.org install hexo -g</span><br></pre></td></tr></table></figure></p>
 <p>其他的都是小问题。</p>
 
