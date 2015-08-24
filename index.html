@@ -112,7 +112,7 @@
 				
 				<section class="switch-part switch-part2">
 					<div class="widget tagcloud" id="js-tagcloud">
-						<a href="/tags/Linux/" style="font-size: 10px;">Linux</a> <a href="/tags/hexo/" style="font-size: 20px;">hexo</a> <a href="/tags/node/" style="font-size: 10px;">node</a> <a href="/tags/博客/" style="font-size: 10px;">博客</a> <a href="/tags/测试/" style="font-size: 10px;">测试</a>
+						<a href="/tags/Linux/" style="font-size: 10px;">Linux</a> <a href="/tags/flask/" style="font-size: 10px;">flask</a> <a href="/tags/hexo/" style="font-size: 20px;">hexo</a> <a href="/tags/node/" style="font-size: 10px;">node</a> <a href="/tags/博客/" style="font-size: 10px;">博客</a> <a href="/tags/测试/" style="font-size: 10px;">测试</a> <a href="/tags/笔记/" style="font-size: 10px;">笔记</a>
 					</div>
 				</section>
 				
@@ -191,6 +191,79 @@
 	</div>
 </nav>
       <div class="body-wrap">
+  
+    <article id="post-flask-开发笔记" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2015/08/24/flask-开发笔记/" class="article-date">
+  	<time datetime="2015-08-24T13:11:32.000Z" itemprop="datePublished">2015-08-24</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/08/24/flask-开发笔记/">flask 开发笔记</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <ul>
+<li>大多数 Linux 发行版都提供了 virtualenv 包。例如,Ubuntu 用户可以使用下述命令安装它:<figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo apt-<span class="built_in">get</span> install <span class="keyword">python</span>-virtualenv</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<ul>
+<li>下一步是使用 virtualenv 命令在 flasky 文件夹中创建 Python 虚拟环境。这个命令只有一个必需的参数,即虚拟环境的名字。<figure class="highlight elixir"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$ </span>virtualenv venv</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<ul>
+<li>如果你使用 bash 命令行(Linux 和 Mac OS X 用户),可以通过下面的命令激活这个虚拟环境:<figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="keyword">source</span> venv<span class="regexp">/bin/</span>activate</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<ul>
+<li><p>当虚拟环境中的工作完成后,如果你想回到全局 Python 解释器中,可以在命令行提示符下输入 <code>deactivate</code>。</p>
+</li>
+<li><p>执行下述命令可在虚拟环境中安装 Flask:</p>
+<figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(venv) $ pip <span class="keyword">install</span> flask</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/flask/">flask</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/笔记/">笔记</a></li></ul>
+	</div>
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
   
     <article id="post-《Linux系统命令及Shell脚本实践指南》笔记" class="article article-type-post" itemscope itemprop="blogPost">
   
