@@ -27,7 +27,7 @@
 
 
 如果你使用 b">
-<meta property="og:updated_time" content="2015-08-24T13:13:03.000Z">
+<meta property="og:updated_time" content="2015-08-24T15:39:59.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="flask 开发笔记">
 <meta name="twitter:description" content="大多数 Linux 发行版都提供了 virtualenv 包。例如,Ubuntu 用户可以使用下述命令安装它:1$ sudo apt-get install python-virtualenv
@@ -245,6 +245,10 @@
 	</div>
 
         
+	<div class="article-category tagcloud">
+	<a class="article-category-link" href="/categories/flask/">flask</a>
+	</div>
+
 
         <div class="clearfix"></div>
       </div>
@@ -269,6 +273,19 @@
 </li>
 <li><p>执行下述命令可在虚拟环境中安装 Flask:</p>
 <figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(venv) $ pip <span class="keyword">install</span> flask</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<a id="more"></a>
+<ul>
+<li>所有 Flask 程序都必须创建一个程序实例。程序实例是 Flask 类的对象,经常使用下述代码创建:<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> flask <span class="keyword">import</span> Flask</span><br><span class="line">app = Flask(__name__)</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>Flask 类的构造函数只有一个必须指定的参数,即程序主模块或包的名字。在大多数程序中,Python 的 <code>__name__</code> 变量就是所需的值。Flask 用这个参数决定程序的根目录,以便稍后能够找到相对于程序根目录的资源文件位置。</p>
+<ul>
+<li><p>路由<br>客户端(例如 Web 浏览器)把请求发送给 Web 服务器,Web 服务器再把请求发送给 Flask程序实例。程序实例需要知道对每个 URL 请求运行哪些代码,所以保存了一个 URL 到Python 函数的映射关系。处理 URL 和函数之间关系的程序称为路由。</p>
+</li>
+<li><p>示例  hello.py :一个完整的 Flask 程序</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> flask <span class="keyword">import</span> Flask</span><br><span class="line">app = Flask(__name__)</span><br><span class="line"></span><br><span class="line"><span class="decorator">@app.route('/')</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">index</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="keyword">return</span> <span class="string">'&lt;h1&gt;Hello World!&lt;/h1&gt;'</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    app.run(debug=<span class="keyword">True</span>)</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 
