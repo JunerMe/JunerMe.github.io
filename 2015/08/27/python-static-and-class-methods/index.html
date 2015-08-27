@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>python static and class methods | Juner&#39;Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="As of Python 2.2, it is possible to define two kinds of methods within a class that can be called without an instance: static methods work roughly like simple instance-less functions inside a class, a">
+<meta property="og:type" content="article">
+<meta property="og:title" content="python static and class methods">
+<meta property="og:url" content="http://yoursite.com/2015/08/27/python-static-and-class-methods/index.html">
+<meta property="og:site_name" content="Juner'Blog">
+<meta property="og:description" content="As of Python 2.2, it is possible to define two kinds of methods within a class that can be called without an instance: static methods work roughly like simple instance-less functions inside a class, a">
+<meta property="og:updated_time" content="2015-08-27T13:10:26.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="python static and class methods">
+<meta name="twitter:description" content="As of Python 2.2, it is possible to define two kinds of methods within a class that can be called without an instance: static methods work roughly like simple instance-less functions inside a class, a">
+  
+    <link rel="alternative" href="/atom.xml" title="Juner&#39;Blog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img lazy-src="https://avatars3.githubusercontent.com/u/12780611?v=3&amp;u=d60d88bc42bf366f29e023d17ee2831c78ed10c9&amp;s=140" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">Juner</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle">一个医学生的编程梦</p>
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						<div class="icon-wrap icon-link hide" data-idx="2">
+							<div class="loopback_l"></div>
+							<div class="loopback_r"></div>
+						</div>
+						
+						
+						<div class="icon-wrap icon-me hide" data-idx="3">
+							<div class="user"></div>
+							<div class="shoulder"></div>
+						</div>
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>标签</li>
+						
+						<li>友情链接</li>
+						
+						
+						<li>关于我</li>
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://github.com/JunerMe" title="github">github</a>
+					        
+								<a class="zhihu" target="_blank" href="http://www.zhihu.com/people/juner-me" title="zhihu">zhihu</a>
+					        
+								<a class="mail" target="_blank" href="/juner@juner.me" title="mail">mail</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/Linux/" style="font-size: 10px;">Linux</a> <a href="/tags/flask/" style="font-size: 10px;">flask</a> <a href="/tags/hexo/" style="font-size: 20px;">hexo</a> <a href="/tags/node/" style="font-size: 10px;">node</a> <a href="/tags/static-method/" style="font-size: 10px;">static method</a> <a href="/tags/vim/" style="font-size: 10px;">vim</a> <a href="/tags/博客/" style="font-size: 10px;">博客</a> <a href="/tags/测试/" style="font-size: 10px;">测试</a> <a href="/tags/笔记/" style="font-size: 10px;">笔记</a>
+					</div>
+				</section>
+				
+				
+				
+				<section class="switch-part switch-part3">
+					<div id="js-friends">
+					
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://localhost:4000/">奥巴马的博客</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://localhost:4000/">卡卡的美丽传说</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://localhost:4000/">本泽马的博客</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://localhost:4000/">吉格斯的博客</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://localhost:4000/">习大大大不同</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://localhost:4000/">托蒂的博客</a>
+			        
+			        </div>
+				</section>
+				
+
+				
+				
+				<section class="switch-part switch-part4">
+				
+					<div id="js-aboutme">我是谁，我从哪里来，我到哪里去？我就是我，是颜色不一样的吃货…</div>
+				</section>
+				
+			</div>
+		</div>
+	</header>				
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">Juner</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				<img lazy-src="https://avatars3.githubusercontent.com/u/12780611?v=3&amp;u=d60d88bc42bf366f29e023d17ee2831c78ed10c9&amp;s=140" class="js-avatar">
+			</div>
+			<hgroup>
+			  <h1 class="header-author">Juner</h1>
+			</hgroup>
+			
+			<p class="header-subtitle">一个医学生的编程梦</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">所有文章</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/JunerMe" title="github">github</a>
+			        
+						<a class="zhihu" target="_blank" href="http://www.zhihu.com/people/juner-me" title="zhihu">zhihu</a>
+			        
+						<a class="mail" target="_blank" href="/juner@juner.me" title="mail">mail</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+      <div class="body-wrap"><article id="post-python-static-and-class-methods" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2015/08/27/python-static-and-class-methods/" class="article-date">
+  	<time datetime="2015-08-27T13:05:10.000Z" itemprop="datePublished">2015-08-27</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      python static and class methods
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/static-method/">static method</a></li></ul>
+	</div>
+
+        
+	<div class="article-category tagcloud">
+	<a class="article-category-link" href="/categories/python/">python</a>
+	</div>
+
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>As of Python 2.2, it is possible to define two kinds of methods within a class that can be called without an instance: static methods work roughly like simple instance-less functions inside a class, and class methods are passed a class instead of an instance. Both are similar to tools in other languages (e.g., C++ static methods). Although this feature was added in conjunction with the new-style classes discussed in the prior sections, static and class methods work for classic classes too.<br>To enable these method modes, you must call special built-in functions named staticmethod and classmethod within the class, or invoke them with the special @name decoration syntax we’ll meet later in this chapter. These functions are required to enable these special method modes in Python 2.X, and are generally needed in 3.X. In Python 3.X, a staticmethod declaration is not required for instance-less methods called only through a class name, but is still required if such methods are called through instances.<br><a id="more"></a></p>
+<h2 id="Why_the_Special_Methods?">Why the Special Methods?</h2><p>As we’ve learned, a class’s method is normally passed an instance object in its first<br>argument, to serve as the implied subject of the method call—that’s the “object” in<br>“object-oriented programming.” Today, though, there are two ways to modify this<br>model. Before I explain what they are, I should explain why this might matter to you.<br>Sometimes, programs need to process data associated with classes instead of instances.<br>Consider keeping track of the number of instances created from a class, or maintaining<br>a list of all of a class’s instances that are currently in memory. This type of information<br>and its processing are associated with the class rather than its instances. That is, the<br>information is usually stored on the class itself and processed apart from any instance.<br>For such tasks, simple functions coded outside a class can often suffice—because they<br>can access class attributes through the class name, they have access to class data and<br>never require access to an instance. However, to better associate such code with a class,<br>and to allow such processing to be customized with inheritance as usual, it would be<br>better to code these types of functions inside the class itself. To make this work, we<br>need methods in a class that are not passed, and do not expect, a self instance argu-<br>ment.<br>Python supports such goals with the notion of static methods—simple functions with<br>no self argument that are nested in a class and are designed to work on class attributes<br>instead of instance attributes. Static methods never receive an automatic self argument,<br>whether called through a class or an instance. They usually keep track of information<br>that spans all instances, rather than providing behavior for instances.<br>Although less commonly used, Python also supports the notion of class methods—<br>methods of a class that are passed a class object in their first argument instead of an<br>instance, regardless of whether they are called through an instance or a class. Such<br>methods can access class data through their class argument—what we’ve called self<br>thus far—even if called through an instance. Normal methods, now known in formal<br>circles as instance methods, still receive a subject instance when called; static and class<br>methods do not.</p>
+<h2 id="Static_Methods_in_2-X_and_3-X">Static Methods in 2.X and 3.X</h2><p>The concept of static methods is the same in both Python 2.X and 3.X, but its imple-<br>mentation requirements have evolved somewhat in Python 3.X. Since this book covers<br>both versions, I need to explain the differences in the two underlying models before we<br>get to the code.<br>Really, we already began this story in the preceding chapter, when we explored the<br>notion of unbound methods. Recall that both Python 2.X and 3.X always pass an in-<br>stance to a method that is called through an instance. However, Python 3.X treats<br>methods fetched directly from a class differently than 2.X—a difference in Python lines<br>that has nothing to do with new-style classes:<br>• Both Python 2.X and 3.X produce a bound method when a method is fetched<br>through an instance.<br>• In Python 2.X, fetching a method from a class produces an unbound method, which<br>cannot be called without manually passing an instance.<br>• In Python 3.X, fetching a method from a class produces a simple function, which<br>can be called normally with no instance present.<br>In other words, Python 2.X class methods always require an instance to be passed in,<br>whether they are called through an instance or a class. By contrast, in Python 3.X we<br>are required to pass an instance to a method only if the method expects one—methods<br>that do not include an instance argument can be called through the class without pass-<br>ing an instance. That is, 3.X allows simple functions in a class, as long as they do not<br>expect and are not passed an instance argument. The net effect is that:<br>• In Python 2.X, we must always declare a method as static in order to call it without<br>an instance, whether it is called through a class or an instance.<br>• In Python 3.X, we need not declare such methods as static if they will be called<br>through a class only, but we must do so in order to call them through an instance.<br>To illustrate, suppose we want to use class attributes to count how many instances are<br>generated from a class. The following file, spam.py, makes a first attempt—its class has<br>a counter stored as a class attribute, a constructor that bumps up the counter by one<br>each time a new instance is created, and a method that displays the counter’s value.<br>Remember, class attributes are shared by all instances. Therefore, storing the counter<br>in the class object itself ensures that it effectively spans all instances:<br>class Spam:<br>numInstances = 0<br>def <strong>init</strong>(self):<br>Spam.numInstances = Spam.numInstances + 1<br>def printNumInstances():<br>print(“Number of instances created: %s” % Spam.numInstances)<br>The printNumInstances method is designed to process class data, not instance data—<br>it’s about all the instances, not any one in particular. Because of that, we want to be<br>able to call it without having to pass an instance. Indeed, we don’t want to make an<br>instance to fetch the number of instances, because this would change the number of<br>instances we’re trying to fetch! In other words, we want a self -less “static” method.<br>Whether this code’s printNumInstances works or not, though, depends on which<br>Python you use, and which way you call the method—through the class or through an<br>instance. In 2.X, calls to a self -less method function through both the class and in-<br>stances fail (as usual, I’ve omitted some error text here for space):<br>C:\code&gt; c:\python27\python</p>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>from spam import Spam<br>a = Spam()<br>b = Spam()<br>c = Spam()</p>
+<h1 id="Cannot_call_unbound_class_methods_in_2-X">Cannot call unbound class methods in 2.X</h1><h1 id="Methods_expect_a_self_object_by_default">Methods expect a self object by default</h1><p>Spam.printNumInstances()<br>TypeError: unbound method printNumInstances() must be called with Spam instance<br>as first argument (got nothing instead)<br>a.printNumInstances()<br>TypeError: printNumInstances() takes no arguments (1 given)<br>The problem here is that unbound instance methods aren’t exactly the same as simple<br>functions in 2.X. Even though there are no arguments in the def header, the method<br>still expects an instance to be passed in when it’s called, because the function is asso-<br>ciated with a class. In Python 3.X, calls to self -less methods made through classes<br>work, but calls from instances fail:<br>C:\code&gt; c:\python33\python<br>from spam import Spam<br>a = Spam()<br>b = Spam()<br>c = Spam()</p>
+<h1 id="Can_call_functions_in_class_in_3-X">Can call functions in class in 3.X</h1><h1 id="Calls_through_instances_still_pass_a_self">Calls through instances still pass a self</h1><p>Spam.printNumInstances()</p>
+<h1 id="Differs_in_3-X">Differs in 3.X</h1><p>Number of instances created: 3<br>a.printNumInstances()<br>TypeError: printNumInstances() takes 0 positional arguments but 1 was given<br>That is, calls to instance-less methods like printNumInstances made through the class<br>fail in Python 2.X but work in Python 3.X. On the other hand, calls made through an<br>instance fail in both Pythons, because an instance is automatically passed to a method<br>that does not have an argument to receive it:<br>Spam.printNumInstances()<br>instance.printNumInstances()</p>
+<h1 id="Fails_in_2-X,_works_in_3-X">Fails in 2.X, works in 3.X</h1><h1 id="Fails_in_both_2-X_and_3-X_(unless_static)">Fails in both 2.X and 3.X (unless static)</h1><p>If you’re able to use 3.X and stick with calling self -less methods through classes only,<br>you already have a static method feature. However, to allow self -less methods to be<br>called through classes in 2.X and through instances in both 2.X and 3.X, you need to<br>either adopt other designs or be able to somehow mark such methods as special. Let’s<br>look at both options in turn.</p>
+</blockquote>
+</blockquote>
+</blockquote>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2015/08/27/zhuye项目开发笔记/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">zhuye项目开发笔记</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+<div class="share">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">分享到：</span>
+		<a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+		<a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	</div>
+	<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
+
+
+
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="python-static-and-class-methods" data-title="python static and class methods" data-url="http://yoursite.com/2015/08/27/python-static-and-class-methods/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"true"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2015 Juner
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      	</div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
+
+
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: true,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false
+	}
+</script>
+<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js" type="text/javascript"></script>
+<script src="/js/main.js" type="text/javascript"></script>
+
+
+
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+  </div>
+</body>
+</html>
