@@ -112,7 +112,7 @@
 				
 				<section class="switch-part switch-part2">
 					<div class="widget tagcloud" id="js-tagcloud">
-						<a href="/tags/Linux/" style="font-size: 10px;">Linux</a> <a href="/tags/flask/" style="font-size: 10px;">flask</a> <a href="/tags/hexo/" style="font-size: 20px;">hexo</a> <a href="/tags/node/" style="font-size: 10px;">node</a> <a href="/tags/static-method/" style="font-size: 10px;">static method</a> <a href="/tags/vim/" style="font-size: 10px;">vim</a> <a href="/tags/博客/" style="font-size: 10px;">博客</a> <a href="/tags/测试/" style="font-size: 10px;">测试</a> <a href="/tags/笔记/" style="font-size: 10px;">笔记</a>
+						<a href="/tags/Linux/" style="font-size: 10px;">Linux</a> <a href="/tags/flask/" style="font-size: 10px;">flask</a> <a href="/tags/hexo/" style="font-size: 20px;">hexo</a> <a href="/tags/node/" style="font-size: 10px;">node</a> <a href="/tags/python/" style="font-size: 10px;">python</a> <a href="/tags/static-method/" style="font-size: 10px;">static method</a> <a href="/tags/vim/" style="font-size: 10px;">vim</a> <a href="/tags/博客/" style="font-size: 10px;">博客</a> <a href="/tags/测试/" style="font-size: 10px;">测试</a> <a href="/tags/笔记/" style="font-size: 10px;">笔记</a>
 					</div>
 				</section>
 				
@@ -191,6 +191,71 @@
 	</div>
 </nav>
       <div class="body-wrap">
+  
+    <article id="post-python学习笔记（1）-模块的导入与重载" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2015/10/10/python学习笔记（1）-模块的导入与重载/" class="article-date">
+  	<time datetime="2015-10-10T13:57:08.000Z" itemprop="datePublished">2015-10-10</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/10/10/python学习笔记（1）-模块的导入与重载/">python学习笔记（1）---模块的导入与重载</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>每一个以扩展名’py’结尾的Python源代码都是一个模块，其他文件可以通过导入一个模块而读取该模块的内容。</p>
+<p>基本实例：script1.py:<br><figure class="highlight monkey"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="preprocessor"><span class="keyword">import</span> sys</span></span><br><span class="line"><span class="built_in">print</span>(sys.platform)</span><br></pre></td></tr></table></figure></p>
+<p>可以通过’import’来运行上诉的script1.py:<br><figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="prompt">&gt;&gt;</span>&gt; import script1</span><br><span class="line">linux</span><br><span class="line"><span class="prompt">&gt;&gt;</span>&gt;</span><br></pre></td></tr></table></figure></p>
+<p>但只有第一次导入时候才会运行script1.py，以后的导入都不会再次的运行，即使在另一个窗口中改变并保存了script1.py的源代码。<br><figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="prompt">&gt;&gt;</span>&gt; import script1</span><br><span class="line"><span class="prompt">&gt;&gt;</span>&gt; import script1</span><br></pre></td></tr></table></figure></p>
+<p>如果需要在一次python会话中再次运行已导入的文件（如文件的源代码已改变），需要用到’reload’函数。它在python2.x是内置函数，在python3.x被移到了imp标准库中。<br><figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="prompt">&gt;&gt;</span>&gt; from imp import reload</span><br><span class="line"><span class="prompt">&gt;&gt;</span>&gt; reload(script1)</span><br><span class="line">new linux</span><br><span class="line">&lt;<span class="class"><span class="keyword">module</span> '<span class="title">script1</span>' <span class="title">from</span> '/<span class="title">home</span>/<span class="title">juner</span>/<span class="title">pythoner</span>/<span class="title">script1</span>.<span class="title">py</span>'&gt;</span></span><br><span class="line"><span class="prompt">&gt;&gt;</span>&gt;</span><br></pre></td></tr></table></figure></p>
+<p>‘reload’函数载入并运行了模板的最新版本代码。</p>
+<p>需要注意，reload函数需要获得的参数是一个已经加载了的模块对象的名称，所以在重载之前需确保已经导入了这个模块。reload是个函数，需要在模块名前加括号，但import是一个句子，不需要括号。</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python/">python</a></li></ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+	<a class="article-category-link" href="/categories/python/">python</a>
+	</div>
+
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
   
     <article id="post-python-static-and-class-methods" class="article article-type-post" itemscope itemprop="blogPost">
   

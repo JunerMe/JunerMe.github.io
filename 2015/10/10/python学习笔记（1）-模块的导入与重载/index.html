@@ -3,51 +3,27 @@
 <head>
   <meta charset="utf-8">
   
-  <title>博客文章测试 | Juner&#39;Blog</title>
+  <title>python学习笔记（1）---模块的导入与重载 | Juner&#39;Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="这仅仅是为了测试博客的一篇文章。
-可以么
-再来一个
-这下应该行了
-
-
-这样恩呢
-好么
-好不错
-
-12import flask@app.route
-好了，就这样">
+  <meta name="description" content="每一个以扩展名’py’结尾的Python源代码都是一个模块，其他文件可以通过导入一个模块而读取该模块的内容。
+基本实例：script1.py:12import sysprint(sys.platform)
+可以通过’import’来运行上诉的script1.py:123&amp;gt;&amp;gt;&amp;gt; import script1linux&amp;gt;&amp;gt;&amp;gt;
+但只有第一次导入时候才会运行script">
 <meta property="og:type" content="article">
-<meta property="og:title" content="博客文章测试">
-<meta property="og:url" content="http://yoursite.com/2015/08/21/博客文章测试/index.html">
+<meta property="og:title" content="python学习笔记（1）---模块的导入与重载">
+<meta property="og:url" content="http://yoursite.com/2015/10/10/python学习笔记（1）-模块的导入与重载/index.html">
 <meta property="og:site_name" content="Juner'Blog">
-<meta property="og:description" content="这仅仅是为了测试博客的一篇文章。
-可以么
-再来一个
-这下应该行了
-
-
-这样恩呢
-好么
-好不错
-
-12import flask@app.route
-好了，就这样">
-<meta property="og:updated_time" content="2015-08-21T13:16:33.000Z">
+<meta property="og:description" content="每一个以扩展名’py’结尾的Python源代码都是一个模块，其他文件可以通过导入一个模块而读取该模块的内容。
+基本实例：script1.py:12import sysprint(sys.platform)
+可以通过’import’来运行上诉的script1.py:123&amp;gt;&amp;gt;&amp;gt; import script1linux&amp;gt;&amp;gt;&amp;gt;
+但只有第一次导入时候才会运行script">
+<meta property="og:updated_time" content="2015-10-10T14:28:24.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="博客文章测试">
-<meta name="twitter:description" content="这仅仅是为了测试博客的一篇文章。
-可以么
-再来一个
-这下应该行了
-
-
-这样恩呢
-好么
-好不错
-
-12import flask@app.route
-好了，就这样">
+<meta name="twitter:title" content="python学习笔记（1）---模块的导入与重载">
+<meta name="twitter:description" content="每一个以扩展名’py’结尾的Python源代码都是一个模块，其他文件可以通过导入一个模块而读取该模块的内容。
+基本实例：script1.py:12import sysprint(sys.platform)
+可以通过’import’来运行上诉的script1.py:123&amp;gt;&amp;gt;&amp;gt; import script1linux&amp;gt;&amp;gt;&amp;gt;
+但只有第一次导入时候才会运行script">
   
     <link rel="alternative" href="/atom.xml" title="Juner&#39;Blog" type="application/atom+xml">
   
@@ -224,11 +200,11 @@
 		</header>				
 	</div>
 </nav>
-      <div class="body-wrap"><article id="post-博客文章测试" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-python学习笔记（1）-模块的导入与重载" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2015/08/21/博客文章测试/" class="article-date">
-  	<time datetime="2015-08-21T12:28:37.000Z" itemprop="datePublished">2015-08-21</time>
+      <a href="/2015/10/10/python学习笔记（1）-模块的导入与重载/" class="article-date">
+  	<time datetime="2015-10-10T13:57:08.000Z" itemprop="datePublished">2015-10-10</time>
 </a>
     </div>
   
@@ -241,7 +217,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      博客文章测试
+      python学习笔记（1）---模块的导入与重载
     </h1>
   
 
@@ -250,10 +226,14 @@
       <div class="article-info article-info-post">
         
 	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/测试/">测试</a></li></ul>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python/">python</a></li></ul>
 	</div>
 
         
+	<div class="article-category tagcloud">
+	<a class="article-category-link" href="/categories/python/">python</a>
+	</div>
+
 
         <div class="clearfix"></div>
       </div>
@@ -261,18 +241,13 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="这仅仅是为了测试博客的一篇文章。">这仅仅是为了测试博客的一篇文章。</h1><ul>
-<li>可以么</li>
-<li>再来一个</li>
-<li>这下应该行了</li>
-</ul>
-<ol>
-<li>这样恩呢</li>
-<li>好么</li>
-<li>好不错</li>
-</ol>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> flask</span><br><span class="line"><span class="decorator">@app.route</span></span><br></pre></td></tr></table></figure>
-<p>好了，就这样</p>
+        <p>每一个以扩展名’py’结尾的Python源代码都是一个模块，其他文件可以通过导入一个模块而读取该模块的内容。</p>
+<p>基本实例：script1.py:<br><figure class="highlight monkey"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="preprocessor"><span class="keyword">import</span> sys</span></span><br><span class="line"><span class="built_in">print</span>(sys.platform)</span><br></pre></td></tr></table></figure></p>
+<p>可以通过’import’来运行上诉的script1.py:<br><figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="prompt">&gt;&gt;</span>&gt; import script1</span><br><span class="line">linux</span><br><span class="line"><span class="prompt">&gt;&gt;</span>&gt;</span><br></pre></td></tr></table></figure></p>
+<p>但只有第一次导入时候才会运行script1.py，以后的导入都不会再次的运行，即使在另一个窗口中改变并保存了script1.py的源代码。<br><figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="prompt">&gt;&gt;</span>&gt; import script1</span><br><span class="line"><span class="prompt">&gt;&gt;</span>&gt; import script1</span><br></pre></td></tr></table></figure></p>
+<p>如果需要在一次python会话中再次运行已导入的文件（如文件的源代码已改变），需要用到’reload’函数。它在python2.x是内置函数，在python3.x被移到了imp标准库中。<br><figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="prompt">&gt;&gt;</span>&gt; from imp import reload</span><br><span class="line"><span class="prompt">&gt;&gt;</span>&gt; reload(script1)</span><br><span class="line">new linux</span><br><span class="line">&lt;<span class="class"><span class="keyword">module</span> '<span class="title">script1</span>' <span class="title">from</span> '/<span class="title">home</span>/<span class="title">juner</span>/<span class="title">pythoner</span>/<span class="title">script1</span>.<span class="title">py</span>'&gt;</span></span><br><span class="line"><span class="prompt">&gt;&gt;</span>&gt;</span><br></pre></td></tr></table></figure></p>
+<p>‘reload’函数载入并运行了模板的最新版本代码。</p>
+<p>需要注意，reload函数需要获得的参数是一个已经加载了的模块对象的名称，所以在重载之前需确保已经导入了这个模块。reload是个函数，需要在模块名前加括号，但import是一个句子，不需要括号。</p>
 
       
     </div>
@@ -282,18 +257,9 @@
     
 <nav id="article-nav">
   
-    <a href="/2015/08/21/ubuntu14-04-hexo-github-搭建个人博客/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption"><</strong>
-      <div class="article-nav-title">
-        
-          ubuntu14.04+hexo+github 搭建个人博客
-        
-      </div>
-    </a>
   
-  
-    <a href="/2015/08/21/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Hello World</div>
+    <a href="/2015/08/27/python-static-and-class-methods/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">python static and class methods</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
@@ -322,7 +288,7 @@
 
 <div class="duoshuo">
 	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="博客文章测试" data-title="博客文章测试" data-url="http://yoursite.com/2015/08/21/博客文章测试/"></div>
+	<div class="ds-thread" data-thread-key="python学习笔记（1）-模块的导入与重载" data-title="python学习笔记（1）---模块的导入与重载" data-url="http://yoursite.com/2015/10/10/python学习笔记（1）-模块的导入与重载/"></div>
 	<!-- 多说评论框 end -->
 	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 	<script type="text/javascript">
