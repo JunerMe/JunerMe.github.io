@@ -112,7 +112,7 @@
 				
 				<section class="switch-part switch-part2">
 					<div class="widget tagcloud" id="js-tagcloud">
-						<a href="/tags/Linux/" style="font-size: 10px;">Linux</a> <a href="/tags/Tornado/" style="font-size: 10px;">Tornado</a> <a href="/tags/flask/" style="font-size: 10px;">flask</a> <a href="/tags/hexo/" style="font-size: 20px;">hexo</a> <a href="/tags/node/" style="font-size: 10px;">node</a> <a href="/tags/python/" style="font-size: 10px;">python</a> <a href="/tags/static-method/" style="font-size: 10px;">static method</a> <a href="/tags/vim/" style="font-size: 10px;">vim</a> <a href="/tags/博客/" style="font-size: 10px;">博客</a> <a href="/tags/测试/" style="font-size: 10px;">测试</a> <a href="/tags/笔记/" style="font-size: 10px;">笔记</a>
+						<a href="/tags/Linux/" style="font-size: 10px;">Linux</a> <a href="/tags/Tornado/" style="font-size: 10px;">Tornado</a> <a href="/tags/flask/" style="font-size: 10px;">flask</a> <a href="/tags/hexo/" style="font-size: 20px;">hexo</a> <a href="/tags/node/" style="font-size: 10px;">node</a> <a href="/tags/python/" style="font-size: 20px;">python</a> <a href="/tags/static-method/" style="font-size: 10px;">static method</a> <a href="/tags/vim/" style="font-size: 10px;">vim</a> <a href="/tags/博客/" style="font-size: 10px;">博客</a> <a href="/tags/测试/" style="font-size: 10px;">测试</a> <a href="/tags/笔记/" style="font-size: 10px;">笔记</a>
 					</div>
 				</section>
 				
@@ -191,6 +191,95 @@
 	</div>
 </nav>
       <div class="body-wrap">
+  
+    <article id="post-《简明python教程》笔记" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2015/10/12/《简明python教程》笔记/" class="article-date">
+  	<time datetime="2015-10-12T12:27:48.000Z" itemprop="datePublished">2015-10-12</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/10/12/《简明python教程》笔记/">《简明python教程》笔记</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>如何退出Python提示符<br>如果你使用的是Linux/BSD shell,那么按<code>Ctrl-d</code>退出提示符。如果是在Windows命令行中,则按<code>Ctrl-z</code>再按<code>Enter</code>。</p>
+<figure class="highlight d"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="shebang">#!/usr/bin/python</span></span><br></pre></td></tr></table></figure>
+<p>这行告诉你的Linux/Unix系统当你 执行 你的程序的时候,它应该运行哪个解释器。<br><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ chmod a+x helloworld<span class="class">.py</span></span><br><span class="line">$ ./helloworld<span class="class">.py</span></span><br><span class="line">Hello World</span><br></pre></td></tr></table></figure></p>
+<p>chmod命令用来 改变 文件的 模式 ,给系统中所有用户这个源文件的执行许可。然后我们可以直接通过指定源文件的位置来执行程序。我们使用./来指示程序位于当前目录。</p>
+<h3 id="获取帮助">获取帮助</h3><p>如果你需要某个Python函数或语句的快速信息帮助,那么你可以使用内建的help功能。比如,运行help(str)——这会显示str类的帮助。<br><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; <span class="function"><span class="title">help</span><span class="params">(str)</span></span></span><br></pre></td></tr></table></figure></p>
+<blockquote>
+<p>Help on class str in module <strong>builtin</strong>:</p>
+<p>class str(basestring)<br>|  str(object=’’) -&gt; string<br>|<br>|  Return a nice string representation of the object.<br>|  If the argument is a string, the return value is the same    object.<br>|<br>|  Method resolution order:<br>|      str<br>|      basestring<br>|      object<br>|<br>|  Methods defined here:<br>|<br>|  <strong>add</strong>(…)<br>|      x.<strong>add</strong>(y) &lt;==&gt; x+y<br>|<br>|  <strong>contains</strong>(…)<br>|      x.<strong>contains</strong>(y) &lt;==&gt; y in x<br>|<br>|  <strong>eq</strong>(…)<br>|      x.<strong>eq</strong>(y) &lt;==&gt; x==y</p>
+</blockquote>
+<p>按q退出帮助。</p>
+<h3 id="自然字符串">自然字符串</h3><p>如果你想要指示某些不需要如转义符那样的特别处理的字符串,那么你需要指定一个自然字符串。自然字符串通过给字符串加上前缀r或R来指定。例r”Newlines are indicated by \n”。</p>
+<h3 id="Unicode字符串">Unicode字符串</h3><p>Unicode是书写国际文本的标准方法。如果你想要用你的母语如北印度语或阿拉伯语写文本,那么你需要有一个支持Unicode的编辑器。类似地,Python允许你处理Unicode文本——你只需要在字符串前加上前缀u或U。例如,u”This is a Unicode string.”。</p>
+<h3 id="逻辑行和物理行">逻辑行和物理行</h3><p>如果你想要在一个物理行中使用多于一个逻辑行,那么你需要使用分号(;)来特别地标明这种用法。分号表示一个逻辑行/语句的结束。例如:<br>i = 5<br>print i<br>与下面这个相同:<br>i = 5;<br>print i;<br>同样也可以写成:<br>i = 5; print i;<br>甚至可以写成:<br>i = 5; print i</p>
+<h3 id="如何缩进">如何缩进</h3><p>不要混合使用制表符和空格来缩进,因为这在跨越不同的平台的时候,无法正常工作。我 强烈建议 你在每个缩进层次使用 单个制表符 或 两个或四个空格 。选择这三种缩进风格之一。更加重要的是,选择一种风格,然后一贯地使用它,即只 使用这一种风格。</p>
+<h3 id="几个特殊的运算符">几个特殊的运算符</h3><p><code>/</code>  除 x除以y<br><code>//</code> 取整除 返回商的整数部分<br><code>%</code>  取模 返回除法的余数<br><code>&lt;&lt;</code> 左移  把一个数的二进制数左移<br><code>&gt;&gt;</code> 右移<br><code>&amp;</code> 按位与 数的按位与</p>
+<p><code>|</code> 按位或 数的按位或</p>
+<p><code>^</code> 按位异或 数的按位异或</p>
+<p><code>~</code> 按位翻转 x的按位翻转是-(x+1)</p>
+<h3 id="continue语句">continue语句</h3><p>continue语句被用来告诉Python跳过当前循环块中的剩余语句,然后 继续 进行下一轮循环。</p>
+<h3 id="break语句">break语句</h3><p>如果你从for或while循环中 终止 ,任何对应的循环else块将不执行。</p>
+<h3 id="函数形参">函数形参</h3><p>函数中的参数名称为 形参 而你提供给函数调用的值称为实参 。</p>
+<h3 id="变量">变量</h3><p>所有变量的作用域是它们被定义的块,从它们的名称被定义的那点开始。</p>
+<h3 id="文档字符串">文档字符串</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">printMax</span><span class="params">(x, y)</span>:</span></span><br><span class="line">    <span class="string">'''Prints the maximum of two numbers.</span><br><span class="line"></span><br><span class="line">    The two values must be integers.'''</span></span><br><span class="line">    x = int(x) <span class="comment"># convert to integers, if possible</span></span><br><span class="line">    y = int(y)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> x &gt; y:</span><br><span class="line">        <span class="keyword">print</span> x, <span class="string">'is maximum'</span></span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="keyword">print</span> y, <span class="string">'is maximum'</span></span><br></pre></td></tr></table></figure>
+<p>文档字符串的惯例是一个多行字符串,它的首行以大写字母开始,句号结尾。第二行是空行,从第三行开始是详细的描述。 强烈建议 你在你的函数中使用文档字符串时遵循这个惯例。<br>你可以使用<code>__doc__</code>(注意双下划线)调用printMax函数的文档字符串属性.<br>如果你已经在Python中使用过help(),那么你已经看到过DocStings的使用了!它所做的只是抓取函数的<strong>doc</strong>属性,然后整洁地展示给你。</p>
+<h3 id="模块">模块</h3><p>你已经学习了如何在你的程序中定义一次函数而重用代码。如果你想要在其他程序中重用很多函数,那么你该如何编写程序呢?你可能已经猜到了,答案是使用模块。模块基本上就是一个包含了所有你定义的函数和变量的文件。</p>
+<h3 id="模块的name">模块的<strong>name</strong></h3><p>每个模块都有一个名称,在模块中可以通过语句来找出模块的名称。这在一个场合特别有用——就如前面所提到的,当一个模块被第一次输入的时候,这个模块的主块将被运行。假如我们只想在程序本身被使用的时候运行主块,而在它被别的模块输入的时候不运行主块,我们该怎么做呢?这可以通过模块的<strong>name</strong>属性完成。</p>
+<h3 id="dir()函数">dir()函数</h3><p>你可以使用内建的dir函数来列出模块定义的标识符。标识符有函数、类和变量。<br>当你为dir()提供一个模块名的时候,它返回模块定义的名称列表。如果不提供参数,它返回当前模块中定义的名称列表。</p>
+<h3 id="序列">序列</h3><p>列表、元组和字符串都是序列,但是序列是什么,它们为什么如此特别呢?序列的两个主要特点是索引操作符和切片操作符。索引操作符让我们可以从序列中抓取一个特定项目。切片操作符让我们能够获取序列的一个切片,即一部分序列。</p>
+<h3 id="self">self</h3><p>self<br>类的方法与普通的函数只有一个特别的区别——它们必须有一个额外的第一个参数名称,但是在调用这个方法的时候你不为这个参数赋值,Python会提供这个值。这个特别的变量指对象本身,按照惯例它的名称是self。</p>
+<h3 id="init方法"><strong>init</strong>方法</h3><p><strong>init</strong>方法在类的一个对象被建立时,马上运行。这个方法可以用来对你的对象做一些你希望的 初始化 。<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Person</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, name)</span>:</span></span><br><span class="line">        self.name = name</span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">sayHi</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">print</span> <span class="string">'Hello, my name is'</span>, self.name</span><br><span class="line"></span><br><span class="line">    p = Person(<span class="string">'Swaroop'</span>)</span><br><span class="line">    p.sayHi()</span><br></pre></td></tr></table></figure></p>
+<p>我们没有专门调用<strong>init</strong>方法,只是在创建一个类的新实例的时候,把参数包括在圆括号内跟在类名后面,从而传递给<strong>init</strong>方法。这是这种方法的重要之处。</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python/">python</a></li></ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+	<a class="article-category-link" href="/categories/python/">python</a>
+	</div>
+
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
   
     <article id="post-Introduction-to-Tornado-系列学习笔记-1）-从最简单的hello-world-开始" class="article article-type-post" itemscope itemprop="blogPost">
   
@@ -783,70 +872,10 @@ A   输入欲添加文本   <span class="tag">&lt;<span class="title">ESC</span>
 
 
   
-    <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
   
-    <div class="article-meta">
-      <a href="/2015/08/21/hello-world/" class="article-date">
-  	<time datetime="2015-08-21T12:25:22.000Z" itemprop="datePublished">2015-08-21</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/08/21/hello-world/">Hello World</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Welcome to <a href="http://hexo.io/">Hexo</a>! This is your very first post. Check <a href="http://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="http://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick_Start">Quick Start</h2><h3 id="Create_a_new_post">Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="http://hexo.io/docs/writing.html">Writing</a><br>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hexo/">hexo</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/node/">node</a></li></ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-	<a class="article-category-link" href="/categories/日记/">日记</a>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a  href="/2015/08/21/hello-world/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-  
+    <nav id="page-nav">
+      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
+    </nav>
   
 </div>
       <footer id="footer">
