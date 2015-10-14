@@ -112,7 +112,7 @@
 				
 				<section class="switch-part switch-part2">
 					<div class="widget tagcloud" id="js-tagcloud">
-						<a href="/tags/Linux/" style="font-size: 10px;">Linux</a> <a href="/tags/Tornado/" style="font-size: 10px;">Tornado</a> <a href="/tags/flask/" style="font-size: 10px;">flask</a> <a href="/tags/hexo/" style="font-size: 20px;">hexo</a> <a href="/tags/node/" style="font-size: 10px;">node</a> <a href="/tags/python/" style="font-size: 20px;">python</a> <a href="/tags/static-method/" style="font-size: 10px;">static method</a> <a href="/tags/vim/" style="font-size: 10px;">vim</a> <a href="/tags/博客/" style="font-size: 10px;">博客</a> <a href="/tags/测试/" style="font-size: 10px;">测试</a> <a href="/tags/笔记/" style="font-size: 10px;">笔记</a>
+						<a href="/tags/Linux/" style="font-size: 10px;">Linux</a> <a href="/tags/Tornado/" style="font-size: 10px;">Tornado</a> <a href="/tags/flask/" style="font-size: 20px;">flask</a> <a href="/tags/hexo/" style="font-size: 20px;">hexo</a> <a href="/tags/node/" style="font-size: 10px;">node</a> <a href="/tags/python/" style="font-size: 20px;">python</a> <a href="/tags/static-method/" style="font-size: 10px;">static method</a> <a href="/tags/vim/" style="font-size: 10px;">vim</a> <a href="/tags/博客/" style="font-size: 10px;">博客</a> <a href="/tags/测试/" style="font-size: 10px;">测试</a> <a href="/tags/笔记/" style="font-size: 10px;">笔记</a>
 					</div>
 				</section>
 				
@@ -191,6 +191,75 @@
 	</div>
 </nav>
       <div class="body-wrap">
+  
+    <article id="post-flask文档笔记" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2015/10/14/flask文档笔记/" class="article-date">
+  	<time datetime="2015-10-14T13:47:55.000Z" itemprop="datePublished">2015-10-14</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/10/14/flask文档笔记/">flask文档笔记</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>从最简单的Hello World开始：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> flask <span class="keyword">import</span> Flask</span><br><span class="line"></span><br><span class="line">app = Flask(__name__)</span><br><span class="line"></span><br><span class="line"><span class="decorator">@app.route('/')</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">index</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="keyword">return</span> <span class="string">'hello world'</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    app.run()</span><br></pre></td></tr></table></figure></p>
+<h3 id="1">1</h3><figure class="highlight capnproto"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> flask <span class="keyword">import</span> Flask</span><br></pre></td></tr></table></figure>
+<p><code>Flask</code>是个什么鬼？<br><figure class="highlight haskell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> flask.<span class="type">Flask</span><span class="container">(<span class="title">import_name</span>, <span class="title">static_path</span>=<span class="type">None</span>, <span class="title">static_url_path</span>=<span class="type">None</span>, <span class="title">static_folder</span>='<span class="title">static'</span>, <span class="title">template_folder</span>='<span class="title">templates'</span>, <span class="title">instance_path</span>=<span class="type">None</span>, <span class="title">instance_relative_config</span>=<span class="type">False</span>)</span></span></span><br></pre></td></tr></table></figure></p>
+<p>The flask object implements a WSGI application and acts as the central object.</p>
+<h3 id="2">2</h3><figure class="highlight livecodeserver"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">app = Flask(__name__)</span><br><span class="line">````    </span><br><span class="line">The idea <span class="operator">of</span> <span class="operator">the</span> <span class="keyword">first</span> parameter is <span class="built_in">to</span> give Flask <span class="operator">an</span> idea what belongs <span class="built_in">to</span> your application. </span><br><span class="line">If you are <span class="keyword">using</span> <span class="operator">a</span> single module, `__name__` is always <span class="operator">the</span> correct <span class="built_in">value</span>. If you however are <span class="keyword">using</span> <span class="operator">a</span> package, <span class="keyword">it</span>’s usually recommended <span class="built_in">to</span> hardcode <span class="operator">the</span> name <span class="operator">of</span> your package there.</span><br><span class="line">For example <span class="keyword">if</span> your application is defined <span class="operator">in</span> yourapplication/app.py you should <span class="built_in">create</span> <span class="keyword">it</span> <span class="operator">with</span> <span class="constant">one</span> <span class="operator">of</span> <span class="operator">the</span> <span class="constant">two</span> versions below:</span><br></pre></td></tr></table></figure>
+<p>app = Flask(‘yourapplication’)<br>app = Flask(<strong>name</strong>.split(‘.’)[0])<br>```<br>第二种看不懂？</p>
+<blockquote>
+<p>split(…)<br>    S.split([sep [,maxsplit]]) -&gt; list of strings</p>
+</blockquote>
+<pre><code><span class="type">Return</span> a list <span class="keyword">of</span> the words <span class="keyword">in</span> the <span class="type">string</span> S, <span class="keyword">using</span> sep <span class="keyword">as</span> the
+delimiter <span class="type">string</span>.  <span class="type">If</span> maxsplit <span class="keyword">is</span> given, at most maxsplit
+splits are done. <span class="type">If</span> sep <span class="keyword">is</span> <span class="keyword">not</span> specified <span class="keyword">or</span> <span class="keyword">is</span> <span class="type">None</span>, <span class="type">any</span>
+whitespace <span class="type">string</span> <span class="keyword">is</span> a separator <span class="keyword">and</span> empty strings are removed
+<span class="keyword">from</span> the <span class="literal">result</span>.
+</code></pre><p><code>__name__.split(&#39;.&#39;)[0]</code>就是以<code>.</code>为分隔符把字符串’<strong>name</strong>‘变成为一个列表，然后取其第一个元素；这里的’<strong>name</strong>‘应该为<code>yourapplication.app</code>这样的。</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/flask/">flask</a></li></ul>
+	</div>
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
   
     <article id="post-《简明python教程》笔记" class="article article-type-post" itemscope itemprop="blogPost">
   
@@ -790,72 +859,6 @@ A   输入欲添加文本   <span class="tag">&lt;<span class="title">ESC</span>
 	<a class="article-category-link" href="/categories/博客/">博客</a>
 	</div>
 
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-  
-    <article id="post-博客文章测试" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2015/08/21/博客文章测试/" class="article-date">
-  	<time datetime="2015-08-21T12:28:37.000Z" itemprop="datePublished">2015-08-21</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/08/21/博客文章测试/">博客文章测试</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="这仅仅是为了测试博客的一篇文章。">这仅仅是为了测试博客的一篇文章。</h1><ul>
-<li>可以么</li>
-<li>再来一个</li>
-<li>这下应该行了</li>
-</ul>
-<ol>
-<li>这样恩呢</li>
-<li>好么</li>
-<li>好不错</li>
-</ol>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> flask</span><br><span class="line"><span class="decorator">@app.route</span></span><br></pre></td></tr></table></figure>
-<p>好了，就这样</p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/测试/">测试</a></li></ul>
-	</div>
-
-      
 
       
       <div class="clearfix"></div>

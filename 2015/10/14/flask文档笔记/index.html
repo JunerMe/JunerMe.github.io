@@ -3,27 +3,24 @@
 <head>
   <meta charset="utf-8">
   
-  <title>python学习笔记（1）---模块的导入与重载 | Juner&#39;Blog</title>
+  <title>flask文档笔记 | Juner&#39;Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="每一个以扩展名’py’结尾的Python源代码都是一个模块，其他文件可以通过导入一个模块而读取该模块的内容。
-基本实例：script1.py:12import sysprint(sys.platform)
-可以通过’import’来运行上诉的script1.py:123&amp;gt;&amp;gt;&amp;gt; import script1linux&amp;gt;&amp;gt;&amp;gt;
-但只有第一次导入时候才会运行script">
+  <meta name="description" content="从最简单的Hello World开始：12345678910from flask import Flaskapp = Flask(__name__)@app.route(&apos;/&apos;)def index():    return &apos;hello world&apos;if __name__ == &apos;__main__&apos;:    app.run()
+11from flask import Flask
+Flask是个什么">
 <meta property="og:type" content="article">
-<meta property="og:title" content="python学习笔记（1）---模块的导入与重载">
-<meta property="og:url" content="http://yoursite.com/2015/10/10/python学习笔记（1）-模块的导入与重载/index.html">
+<meta property="og:title" content="flask文档笔记">
+<meta property="og:url" content="http://yoursite.com/2015/10/14/flask文档笔记/index.html">
 <meta property="og:site_name" content="Juner'Blog">
-<meta property="og:description" content="每一个以扩展名’py’结尾的Python源代码都是一个模块，其他文件可以通过导入一个模块而读取该模块的内容。
-基本实例：script1.py:12import sysprint(sys.platform)
-可以通过’import’来运行上诉的script1.py:123&amp;gt;&amp;gt;&amp;gt; import script1linux&amp;gt;&amp;gt;&amp;gt;
-但只有第一次导入时候才会运行script">
-<meta property="og:updated_time" content="2015-10-10T15:16:43.000Z">
+<meta property="og:description" content="从最简单的Hello World开始：12345678910from flask import Flaskapp = Flask(__name__)@app.route(&apos;/&apos;)def index():    return &apos;hello world&apos;if __name__ == &apos;__main__&apos;:    app.run()
+11from flask import Flask
+Flask是个什么">
+<meta property="og:updated_time" content="2015-10-14T14:40:04.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="python学习笔记（1）---模块的导入与重载">
-<meta name="twitter:description" content="每一个以扩展名’py’结尾的Python源代码都是一个模块，其他文件可以通过导入一个模块而读取该模块的内容。
-基本实例：script1.py:12import sysprint(sys.platform)
-可以通过’import’来运行上诉的script1.py:123&amp;gt;&amp;gt;&amp;gt; import script1linux&amp;gt;&amp;gt;&amp;gt;
-但只有第一次导入时候才会运行script">
+<meta name="twitter:title" content="flask文档笔记">
+<meta name="twitter:description" content="从最简单的Hello World开始：12345678910from flask import Flaskapp = Flask(__name__)@app.route(&apos;/&apos;)def index():    return &apos;hello world&apos;if __name__ == &apos;__main__&apos;:    app.run()
+11from flask import Flask
+Flask是个什么">
   
     <link rel="alternative" href="/atom.xml" title="Juner&#39;Blog" type="application/atom+xml">
   
@@ -200,11 +197,11 @@
 		</header>				
 	</div>
 </nav>
-      <div class="body-wrap"><article id="post-python学习笔记（1）-模块的导入与重载" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-flask文档笔记" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2015/10/10/python学习笔记（1）-模块的导入与重载/" class="article-date">
-  	<time datetime="2015-10-10T13:57:08.000Z" itemprop="datePublished">2015-10-10</time>
+      <a href="/2015/10/14/flask文档笔记/" class="article-date">
+  	<time datetime="2015-10-14T13:47:55.000Z" itemprop="datePublished">2015-10-14</time>
 </a>
     </div>
   
@@ -217,7 +214,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      python学习笔记（1）---模块的导入与重载
+      flask文档笔记
     </h1>
   
 
@@ -226,14 +223,10 @@
       <div class="article-info article-info-post">
         
 	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python/">python</a></li></ul>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/flask/">flask</a></li></ul>
 	</div>
 
         
-	<div class="article-category tagcloud">
-	<a class="article-category-link" href="/categories/python/">python</a>
-	</div>
-
 
         <div class="clearfix"></div>
       </div>
@@ -241,13 +234,21 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>每一个以扩展名’py’结尾的Python源代码都是一个模块，其他文件可以通过导入一个模块而读取该模块的内容。</p>
-<p>基本实例：script1.py:<br><figure class="highlight monkey"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="preprocessor"><span class="keyword">import</span> sys</span></span><br><span class="line"><span class="built_in">print</span>(sys.platform)</span><br></pre></td></tr></table></figure></p>
-<p>可以通过’import’来运行上诉的script1.py:<br><figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="prompt">&gt;&gt;</span>&gt; import script1</span><br><span class="line">linux</span><br><span class="line"><span class="prompt">&gt;&gt;</span>&gt;</span><br></pre></td></tr></table></figure></p>
-<p>但只有第一次导入时候才会运行script1.py，以后的导入都不会再次的运行，即使在另一个窗口中改变并保存了script1.py的源代码。<br><figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="prompt">&gt;&gt;</span>&gt; import script1</span><br><span class="line"><span class="prompt">&gt;&gt;</span>&gt; import script1</span><br></pre></td></tr></table></figure></p>
-<p>如果需要在一次python会话中再次运行已导入的文件（如文件的源代码已改变），需要用到<code>reload</code>函数。它在python2.x是内置函数，在python3.x被移到了imp标准库中。<br><figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="prompt">&gt;&gt;</span>&gt; from imp import reload</span><br><span class="line"><span class="prompt">&gt;&gt;</span>&gt; reload(script1)</span><br><span class="line">new linux</span><br><span class="line">&lt;<span class="class"><span class="keyword">module</span> '<span class="title">script1</span>' <span class="title">from</span> '/<span class="title">home</span>/<span class="title">juner</span>/<span class="title">pythoner</span>/<span class="title">script1</span>.<span class="title">py</span>'&gt;</span></span><br><span class="line"><span class="prompt">&gt;&gt;</span>&gt;</span><br></pre></td></tr></table></figure></p>
-<p>‘reload’函数载入并运行了模板的最新版本代码。</p>
-<p>需要注意，reload函数需要获得的参数是一个已经加载了的模块对象的名称，所以在重载之前需确保已经导入了这个模块。reload是个函数，需要在模块名前加括号，但import是一个句子，不需要括号。<strong>reload是不可传递的，重载一个模块的话只会重载该模块，而不会重载该模块导入的任意模块</strong></p>
+        <p>从最简单的Hello World开始：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> flask <span class="keyword">import</span> Flask</span><br><span class="line"></span><br><span class="line">app = Flask(__name__)</span><br><span class="line"></span><br><span class="line"><span class="decorator">@app.route('/')</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">index</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="keyword">return</span> <span class="string">'hello world'</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    app.run()</span><br></pre></td></tr></table></figure></p>
+<h3 id="1">1</h3><figure class="highlight capnproto"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> flask <span class="keyword">import</span> Flask</span><br></pre></td></tr></table></figure>
+<p><code>Flask</code>是个什么鬼？<br><figure class="highlight haskell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> flask.<span class="type">Flask</span><span class="container">(<span class="title">import_name</span>, <span class="title">static_path</span>=<span class="type">None</span>, <span class="title">static_url_path</span>=<span class="type">None</span>, <span class="title">static_folder</span>='<span class="title">static'</span>, <span class="title">template_folder</span>='<span class="title">templates'</span>, <span class="title">instance_path</span>=<span class="type">None</span>, <span class="title">instance_relative_config</span>=<span class="type">False</span>)</span></span></span><br></pre></td></tr></table></figure></p>
+<p>The flask object implements a WSGI application and acts as the central object.</p>
+<h3 id="2">2</h3><figure class="highlight livecodeserver"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">app = Flask(__name__)</span><br><span class="line">````    </span><br><span class="line">The idea <span class="operator">of</span> <span class="operator">the</span> <span class="keyword">first</span> parameter is <span class="built_in">to</span> give Flask <span class="operator">an</span> idea what belongs <span class="built_in">to</span> your application. </span><br><span class="line">If you are <span class="keyword">using</span> <span class="operator">a</span> single module, `__name__` is always <span class="operator">the</span> correct <span class="built_in">value</span>. If you however are <span class="keyword">using</span> <span class="operator">a</span> package, <span class="keyword">it</span>’s usually recommended <span class="built_in">to</span> hardcode <span class="operator">the</span> name <span class="operator">of</span> your package there.</span><br><span class="line">For example <span class="keyword">if</span> your application is defined <span class="operator">in</span> yourapplication/app.py you should <span class="built_in">create</span> <span class="keyword">it</span> <span class="operator">with</span> <span class="constant">one</span> <span class="operator">of</span> <span class="operator">the</span> <span class="constant">two</span> versions below:</span><br></pre></td></tr></table></figure>
+<p>app = Flask(‘yourapplication’)<br>app = Flask(<strong>name</strong>.split(‘.’)[0])<br>```<br>第二种看不懂？</p>
+<blockquote>
+<p>split(…)<br>    S.split([sep [,maxsplit]]) -&gt; list of strings</p>
+</blockquote>
+<pre><code><span class="type">Return</span> a list <span class="keyword">of</span> the words <span class="keyword">in</span> the <span class="type">string</span> S, <span class="keyword">using</span> sep <span class="keyword">as</span> the
+delimiter <span class="type">string</span>.  <span class="type">If</span> maxsplit <span class="keyword">is</span> given, at most maxsplit
+splits are done. <span class="type">If</span> sep <span class="keyword">is</span> <span class="keyword">not</span> specified <span class="keyword">or</span> <span class="keyword">is</span> <span class="type">None</span>, <span class="type">any</span>
+whitespace <span class="type">string</span> <span class="keyword">is</span> a separator <span class="keyword">and</span> empty strings are removed
+<span class="keyword">from</span> the <span class="literal">result</span>.
+</code></pre><p><code>__name__.split(&#39;.&#39;)[0]</code>就是以<code>.</code>为分隔符把字符串’<strong>name</strong>‘变成为一个列表，然后取其第一个元素；这里的’<strong>name</strong>‘应该为<code>yourapplication.app</code>这样的。</p>
 
       
     </div>
@@ -257,18 +258,9 @@
     
 <nav id="article-nav">
   
-    <a href="/2015/10/11/Introduction-to-Tornado-系列学习笔记-1）-从最简单的hello-world-开始/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption"><</strong>
-      <div class="article-nav-title">
-        
-          Introduction to Tornado 系列学习笔记(1）--从最简单的hello world 开始
-        
-      </div>
-    </a>
   
-  
-    <a href="/2015/08/27/python-static-and-class-methods/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">python static and class methods</div>
+    <a href="/2015/10/12/《简明python教程》笔记/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">《简明python教程》笔记</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
@@ -297,7 +289,7 @@
 
 <div class="duoshuo">
 	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="python学习笔记（1）-模块的导入与重载" data-title="python学习笔记（1）---模块的导入与重载" data-url="http://yoursite.com/2015/10/10/python学习笔记（1）-模块的导入与重载/"></div>
+	<div class="ds-thread" data-thread-key="flask文档笔记" data-title="flask文档笔记" data-url="http://yoursite.com/2015/10/14/flask文档笔记/"></div>
 	<!-- 多说评论框 end -->
 	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 	<script type="text/javascript">
