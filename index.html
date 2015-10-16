@@ -226,14 +226,10 @@
 <p>The idea of the first parameter is to give Flask an idea what belongs to your application.<br>If you are using a single module, <code>__name__</code> is always the correct value. If you however are using a package, it’s usually recommended to hardcode the name of your package there.<br>For example if your application is defined in yourapplication/app.py you should create it with one of the two versions below:<br><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">app = <span class="function"><span class="title">Flask</span><span class="params">(<span class="string">'yourapplication'</span>)</span></span></span><br><span class="line">app = <span class="function"><span class="title">Flask</span><span class="params">(__name__.split(<span class="string">'.'</span>)</span></span>[<span class="number">0</span>])</span><br></pre></td></tr></table></figure></p>
 <p>第二种看不懂？</p>
 <blockquote>
-<p>split(…)<br>    S.split([sep [,maxsplit]]) -&gt; list of strings</p>
+<p>split(…)<br>   S.split([sep [,maxsplit]]) -&gt; list of strings</p>
+<p>   Return a list of the words in the string S, using sep as the<br>   delimiter string.  If maxsplit is given, at most maxsplit<br>   splits are done. If sep is not specified or is None, any<br>   whitespace string is a separator and empty strings are removed<br>   from the result.</p>
 </blockquote>
-<pre><code><span class="type">Return</span> a list <span class="keyword">of</span> the words <span class="keyword">in</span> the <span class="type">string</span> S, <span class="keyword">using</span> sep <span class="keyword">as</span> the
-delimiter <span class="type">string</span>.  <span class="type">If</span> maxsplit <span class="keyword">is</span> given, at most maxsplit
-splits are done. <span class="type">If</span> sep <span class="keyword">is</span> <span class="keyword">not</span> specified <span class="keyword">or</span> <span class="keyword">is</span> <span class="type">None</span>, <span class="type">any</span>
-whitespace <span class="type">string</span> <span class="keyword">is</span> a separator <span class="keyword">and</span> empty strings are removed
-<span class="keyword">from</span> the <span class="literal">result</span>.
-</code></pre><p><code>__name__.split(&#39;.&#39;)[0]</code>就是以<code>.</code>为分隔符把字符串’<strong>name</strong>‘变成为一个列表，然后取其第一个元素；这里的’<strong>name</strong>‘应该为<code>yourapplication.app</code>这样的。</p>
+<p><code>__name__.split(&#39;.&#39;)[0]</code>就是以<code>.</code>为分隔符把字符串’<strong>name</strong>‘变成为一个列表，然后取其第一个元素；这里的’<strong>name</strong>‘应该为<code>yourapplication.app</code>这样的。</p>
 
       
     </div>
